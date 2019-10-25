@@ -152,6 +152,9 @@ class JudgeDispatcher(DispatcherBase):
             "io_mode": self.problem.io_mode
         }
 
+
+        logger.info("data:%s",data)
+
         with ChooseJudgeServer() as server:
             if not server:
                 data = {"submission_id": self.submission.id, "problem_id": self.problem.id}
